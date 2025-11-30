@@ -10,7 +10,7 @@ const Hero = () => {
         <img
           src="./herobg.jpg"
           alt="Restaurant ambiance"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-"
         />
         {/* Elegant Overlay */}
         <div className="absolute inset-0 bg-black/60 opacity-50 mix-blend-multiply" />
