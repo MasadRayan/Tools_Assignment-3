@@ -16,8 +16,8 @@ const Navbar = () => {
     const location = useLocation();
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#EFECE3]/70 border-b border-[#8FABD4]/40 container mx-auto ">
-            <div className="px-4 lg:px-8">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#EFECE3]/70 border-b border-[#8FABD4]/40  ">
+            <div className="px-4 lg:px-8 container mx-auto">
                 <div className="flex items-center justify-between h-16 lg:h-20">
 
                     {/* LOGO */}
