@@ -40,7 +40,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section id="gallery" className="py-20 lg:py-2 bg-[#EFECE3]">
+    <section id="gallery" className="py-20 lg:pt-2 lg:pb-0 bg-[#EFECE3]">
       <div className="container mx-auto px-4 lg:px-8">
         
         {/* Section Header */}

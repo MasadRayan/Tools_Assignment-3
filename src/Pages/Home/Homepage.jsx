@@ -5,6 +5,7 @@ import SignatureDishes from './components/SignatureDishes';
 import About from './components/About';
 import ChefSection from './components/ChefSection';
 import Gallery from './components/Gallery';
+import Testimonials from './components/Testimonials';
 
 const Homepage = () => {
     return (
@@ -15,6 +16,7 @@ const Homepage = () => {
             <About></About>
             <ChefSection></ChefSection>
             <Gallery></Gallery>
+            <Testimonials></Testimonials>
         </div>
     );
 };
