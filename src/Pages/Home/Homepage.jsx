@@ -4,6 +4,7 @@ import Marquee from './components/Marquee';
 import SignatureDishes from './components/SignatureDishes';
 import About from './components/About';
 import ChefSection from './components/ChefSection';
+import Gallery from './components/Gallery';
 
 const Homepage = () => {
     return (
@@ -13,6 +14,7 @@ const Homepage = () => {
             <SignatureDishes></SignatureDishes>
             <About></About>
             <ChefSection></ChefSection>
+            <Gallery></Gallery>
         </div>
     );
 };
