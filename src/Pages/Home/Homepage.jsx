@@ -6,6 +6,7 @@ import About from './components/About';
 import ChefSection from './components/ChefSection';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 
 const Homepage = () => {
     return (
@@ -17,6 +18,7 @@ const Homepage = () => {
             <ChefSection></ChefSection>
             <Gallery></Gallery>
             <Testimonials></Testimonials>
+            <FAQ></FAQ>
         </div>
     );
 };
