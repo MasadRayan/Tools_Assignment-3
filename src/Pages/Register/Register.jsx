@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 import { Link, ScrollRestoration, useLocation, useNavigate } from 'react-router';
 import { FaArrowLeft, FaEyeSlash, FaEye } from "react-icons/fa6";
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 
 const Register = () => {
-    const { loginUser, loading, setUser } = useAuth();
+    const { createUser, updateUser, setUser } = useAuth();
     const [showPass, setShowPass] = useState(false);
     const [profilePic, setProfilePic] = useState('');
     const location = useLocation();
@@ -35,9 +36,23 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        const userInfo = { displayName: name, photoURL: profilePic };
+
+        createUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                updateUser(userInfo);
+                setUser({...user, displayName: name, photoURL: profilePic});
+                toast.success('Registration successful');
+                navigate(from, { replace: true });
+                
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
 
     const handleImageUpload = async (e) => {
@@ -56,7 +71,7 @@ const Register = () => {
                 formData
             );
 
-            console.log('Uploaded image URL:', res.data.secure_url);
+            // console.log('Uploaded image URL:', res.data.secure_url);
             setProfilePic(res.data.secure_url);
         } catch (error) {
             console.error("Cloudinary upload failed:", error);
