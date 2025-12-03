@@ -119,7 +119,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="font-body text-sm text-[#EFECE3]/60">
-                            © {new Date().getFullYear()} KhanaPina Restaurant. All rights
+                            © {new Date().getFullYear()} Masad Rayan. All rights
                             reserved.
                         </p>
                         <div className="flex gap-6">
