@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiStar } from "react-icons/hi";
 import PageLoader from "../../components/PageLoader";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router";
+
 
 const AllDishesPage = () => {
     const [allMeals, setAllMeals] = useState([]);
@@ -12,9 +15,10 @@ const AllDishesPage = () => {
             setLoading(true);
             try {
                 const res = await fetch(
-                    "https://free-food-menus-api-two.vercel.app/all"
+                    "https://www.themealdb.com/api/json/v1/1/search.php?s="
                 );
                 const data = await res.json();
+                console.log(data);
 
                 let mealsArray = [];
                 if (Array.isArray(data)) {
@@ -69,7 +73,7 @@ const AllDishesPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                             {safeMeals.map((dish, index) => (
                                 <motion.div
-                                    key={dish.id || index}
+                                    key={dish.idMeal || index}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -79,33 +83,30 @@ const AllDishesPage = () => {
                                     {/* Image */}
                                     <div className="relative h-56 overflow-hidden">
                                         <img
-                                            src={dish.img || "https://via.placeholder.com/400x300?text=No+Image"}
-                                            alt={dish.name || "Dish"}
+                                            src={dish.strMealThumb || "./food/noimage.jpg"}
+                                            alt={dish.strMeal || "Dish"}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
 
-                                        {/* Rating */}
-                                        <div className="absolute top-4 right-4 flex items-center gap-1 bg-[#EFECE3]/90 backdrop-blur-sm px-4 py-1 rounded-full">
-                                            <HiStar className="text-[#D4A017] text-sm" />
-                                            <span className="text-lg font-semibold text-[#1A1A1A]">
-                                                {dish.rate || 0}
-                                            </span>
-                                        </div>
                                     </div>
 
                                     {/* Content */}
                                     <div className="p-5">
                                         <div className="flex items-start justify-between gap-2 mb-2">
-                                            <h3 className="font-display text-xl font-semibold text-[#1A1A1A]">
-                                                {dish.name || "Unnamed Dish"}
+                                            <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]">
+                                                {dish.strMeal || "Unnamed Dish"}
                                             </h3>
-                                            <span className="text-[#4A70A9] font-semibold">
-                                                ${dish.price || "N/A"}
-                                            </span>
                                         </div>
-                                        <p className="font-body text-sm text-[#666] line-clamp-2">
-                                            {dish.dsc || "No description available."}
-                                        </p>
+                                        <div className="flex items-center justify-between">
+                                            <p className="font-body text-sm text-[#666] line-clamp-2">
+                                                Category: {dish.strCategory || "Unknown Category"}
+                                            </p>
+                                            <div className="pr-2">
+                                                <Link to={`/dishes/${dish.idMeal}`} className="text-[#4A70A9] hover:text-[#1A1A1A] transition-colors duration-300">
+                                                    <FaArrowRight size={20} />
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}
