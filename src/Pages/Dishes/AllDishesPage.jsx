@@ -48,6 +48,10 @@ const AllDishesPage = () => {
         fetchMeals();
     }, []);
 
+    if (loading) {
+        return <PageLoader></PageLoader>
+    }
+
     const safeMeals = Array.isArray(allMeals) ? allMeals : [];
 
     return (

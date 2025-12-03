@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { HiStar, HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router";
+import PageLoader from "../../../components/PageLoader";
+import { FaArrowRight } from "react-icons/fa";
+
 
 const dishes = [
   {
@@ -47,6 +51,35 @@ const dishes = [
 ];
 
 const SignatureDishes = () => {
+
+  const [allMeals, setAllMeals] = useState([]);
+  const [loading, setLoading] = useState(true);
+  console.log(allMeals);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=");
+        const data = await res.json();
+
+        setAllMeals(data.meals?.slice(0, 4) || []);
+      } catch (error) {
+        console.error(error);
+        setAllMeals([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMeals();
+  }, []);
+
+  if (loading) {
+    return <PageLoader></PageLoader>
+  }
+
+
+
   return (
     <section className="py-20 lg:py-32 bg-[#EFECE3]">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -75,9 +108,9 @@ const SignatureDishes = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          {dishes.map((dish, index) => (
+          {allMeals.map((dish, index) => (
             <motion.div
-              key={dish.id}
+              key={dish.idMeal}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -87,42 +120,38 @@ const SignatureDishes = () => {
               {/* Image */}
               <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden">
                 <img
-                  src={dish.image}
-                  alt={dish.name}
+                  src={dish.strMealThumb}
+                  alt={dish.strMeal}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#EFECE3]/90 backdrop-blur-sm text-[#1A1A1A] px-3 py-1 rounded-full text-xs uppercase tracking-wider">
-                    {dish.category}
+                  <span className="bg-[#EFECE3]/90 backdrop-blur-sm text-[#1A1A1A] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {dish.strCategory || "Unknown Category"}
                   </span>
                 </div>
 
-                {/* Rating */}
-                <div className="absolute top-4 right-4 flex items-center gap-1 bg-[#EFECE3]/90 backdrop-blur-sm px-2 py-1 rounded-full">
-                  <HiStar className="text-[#D4A017] text-sm" />
-                  <span className="text-xs font-semibold text-[#1A1A1A]">
-                    {dish.rating}
-                  </span>
-                </div>
+
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <div className="flex justify-between items-start gap-2 mb-2">
-                  <h3 className="text-xl font-semibold flex-1">
-                    {dish.name}
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]">
+                    {dish.strMeal || "Unnamed Dish"}
                   </h3>
-
-                  <span className="text-[#4A70A9] font-semibold whitespace-nowrap">
-                    {dish.price}
-                  </span>
                 </div>
-
-                <p className="text-sm text-[#666] line-clamp-2">
-                  {dish.description}
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="font-body text-sm text-[#666] line-clamp-2">
+                    Area: {dish.strArea || "Unknown Area"}
+                  </p>
+                  <div className="pr-2">
+                    <Link to={`/dishes/${dish.idMeal}`} className="text-[#4A70A9] hover:text-[#1A1A1A] transition-colors duration-300">
+                      <FaArrowRight size={20} />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
