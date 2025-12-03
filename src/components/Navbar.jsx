@@ -55,7 +55,7 @@ const Navbar = () => {
                         {
                             user ? (<>
                                 <div className="flex justify-center items-center gap-3">
-                                    <img src={user.photoURL} alt={user.displayName} className="h-12 w-12 rounded-full" />
+                                    <img referrerPolicy="no-referrer" src={user.photoURL} alt={user.displayName} className="h-12 w-12 rounded-full" />
                                     <button onClick={handleLogOut} className="bg-[#4A70A9] text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider shadow-md hover:bg-[#3e5c8d] transition-all">
                                         LogOut
                                     </button>
@@ -124,7 +124,7 @@ const Navbar = () => {
                                 {
                                     user ? (<>
                                         <div className="flex flex-col mx-auto justify-center items-center gap-3">
-                                            <img src={user.photoURL} alt={user.displayName} className="h-12 w-12 rounded-full" />
+                                            <img referrerPolicy="no-referrer" src={user.photoURL} alt={user.displayName} className="h-12 w-12 rounded-full" />
                                             <button onClick={handleLogOut} className="bg-[#4A70A9] text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wider shadow-md hover:bg-[#3e5c8d] transition-all">
                                                 LogOut
                                             </button>
