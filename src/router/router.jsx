@@ -4,6 +4,7 @@ import Homepage from "../Pages/Home/Homepage";
 import AllDishesPage from "../Pages/Dishes/AllDishesPage";
 import DishDetails from "../Pages/Dishes/DishDetails";
 import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 Component: Login,
+            },
+            {
+                path: '/register',
+                Component: Register
             }
             
         ]

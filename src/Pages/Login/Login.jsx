@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router';
+import { Link, ScrollRestoration } from 'react-router';
 import { FaArrowLeft, FaEyeSlash, FaEye } from "react-icons/fa6";
 
 
@@ -136,6 +136,7 @@ const Login = () => {
                     </motion.div>
                 </div>
             </div>
+            <ScrollRestoration></ScrollRestoration>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router';
+import { Link, ScrollRestoration } from 'react-router';
 import { FaArrowLeft, FaEyeSlash, FaEye } from "react-icons/fa6";
 
 
@@ -114,13 +114,13 @@ const Register = () => {
                                                 </button>
                                             </div>
                                             <div><a className="link link-hover">Forgot password?</a></div>
-                                            <button type="submit" className="btn bg-[#4A70A9] text-white font-bold mx-auto mt-4 px-10  ">Login</button>
+                                            <button type="submit" className="btn bg-[#4A70A9] text-white font-bold mx-auto mt-4 px-10  ">Register</button>
                                         </fieldset>
                                     </div>
                                 </div>
                             </form>
                             <div>
-                                <p className="text-center my-2">Don't have an account? <Link to="/register" className="text-[#4A70A9]">Sign up</Link></p>
+                                <p className="text-center my-2">Already have an account? <Link to="/login" className="text-[#4A70A9]">Sign in</Link></p>
                             </div>
                             <div className="divider mt-1 px-5 divider-neutral">OR</div>
                             <div className="flex justify-center items-center flex-col gap-3 mb-4" >
@@ -138,6 +138,7 @@ const Register = () => {
                     </motion.div>
                 </div>
             </div>
+            <ScrollRestoration></ScrollRestoration>
         </div>
     );
 };
