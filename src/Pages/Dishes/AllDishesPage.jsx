@@ -10,6 +10,9 @@ import { ScrollRestoration } from "react-router";
 const AllDishesPage = () => {
     const [allMeals, setAllMeals] = useState([]);
     const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        document.title = "All Dishes ";
+    } , [])
 
     useEffect(() => {
         const fetchMeals = async () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import SignatureDishes from './components/SignatureDishes';
@@ -10,6 +10,9 @@ import FAQ from './components/FAQ';
 import { ScrollRestoration } from 'react-router';
 
 const Homepage = () => {
+    useEffect(() => {
+        document.title = "Home";
+    }, [])
     return (
         <div className=''>
             <Hero></Hero>
