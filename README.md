@@ -1,16 +1,80 @@
-# React + Vite
+# KhanaPina 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Live Demo:** [KhanaPina Live Site](https://astounding-crisp-19ae15.netlify.app/)
 
-Currently, two official plugins are available:
+KhanaPina is a responsive web application for food lovers, featuring a curated menu, dynamic dish details, user authentication, and contact support. Explore exclusive recipes, save favorites, and enjoy a seamless culinary experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 19, Tailwind CSS 4, DaisyUI, Lucide React, React Icons, Framer Motion, Swiper
+- **Backend / API:** Firebase Authentication, Axios for API requests
+- **Animations & Effects:** AOS, Framer Motion, React Fast Marquee
+- **Utilities:** React Router v7, React Hot Toast
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Project Pages
+
+1. **Homepage**
+   - Hero section with CTA buttons
+   - Signature dishes carousel
+   - Featured sections and animations
+
+2. **AllDishesPage**
+   - Displays all dishes fetched dynamically from API
+   - Responsive grid layout with hover effects
+   - Dish cards showing image, category, rating, and price
+
+3. **DishDetailsPage**
+   - Dynamic route for individual dishes
+   - Full dish description, price, and images
+   - API-driven data rendering
+
+4. **Login / Register Pages**
+   - User authentication with email/password and Google login
+   - Responsive forms with validation
+   - Smooth animations using Framer Motion
+
+5. **Contact Page**
+   - Contact form for inquiries
+   - Styled inputs with responsive design
+
+---
+
+## ⚡ Features
+
+- Fully responsive design for mobile, tablet, and desktop
+- Firebase Authentication integration
+- Dynamic dish data rendering
+- Hero section with background overlay and animated text
+- Dish cards with rating, price, and category
+- Smooth animations with Framer Motion and AOS
+- Google & Email authentication
+- Seamless routing using React Router v7
+
+---
+
+## 📁 Folder Structure
+
+```text
+src/
+├─ Components/
+│  ├─ Navbar.jsx
+│  ├─ Hero.jsx
+│  ├─ SignatureDishes.jsx
+│  └─ ...other reusable components
+├─ Pages/
+│  ├─ HomePage.jsx
+│  ├─ AllDishesPage.jsx
+│  ├─ DishDetailsPage.jsx
+│  ├─ Login.jsx
+│  ├─ Register.jsx
+│  └─ Contact.jsx
+├─ Hooks/
+│  └─ useAuth.js
+├─ Context/
+│  └─ AuthProvider.jsx
+├─ firebase.init.js
+└─ App.jsx
