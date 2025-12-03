@@ -5,6 +5,8 @@ import AllDishesPage from "../Pages/Dishes/AllDishesPage";
 import DishDetails from "../Pages/Dishes/DishDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "../Routes/PrivateRoute";
+import ErrorPage from "../components/ErrorPage";
 
 export const router = createBrowserRouter([
     {
@@ -21,7 +23,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dishes/:id',
-                Component: DishDetails
+                element: <PrivateRoute>
+                    <DishDetails></DishDetails>
+                </PrivateRoute>
             },
             {
                 path: '/login',
@@ -30,8 +34,11 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register
+            },
+            {
+                path: '*',
+                Component: ErrorPage
             }
-            
         ]
     }
 ])
