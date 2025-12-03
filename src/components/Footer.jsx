@@ -1,8 +1,13 @@
 import { Link } from "react-router";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiLocationMarker, HiPhone, HiMail, HiClock } from "react-icons/hi";
 
 const Footer = () => {
+    const socialLinks = [
+        { icon: FaFacebook, url: "https://www.facebook.com/masad.rayan.2024" },
+        { icon: FaLinkedin, url: "https://www.linkedin.com/in/masad-rayan/" },
+        { icon: FaGithub, url: "https://www.youtube.com/yourchannel" },
+    ];
     return (
         <footer id="contact" className="bg-[#4A70A9] text-[#EFECE3]">
             {/* Main Footer */}
@@ -22,17 +27,17 @@ const Footer = () => {
                         </p>
 
                         <div className="flex gap-4">
-                            {[FaFacebook, FaInstagram, FaTwitter, FaYoutube].map(
-                                (Icon, idx) => (
-                                    <a
-                                        key={idx}
-                                        href="#"
-                                        className="p-2 bg-[#EFECE3]/10 rounded-full hover:bg-[#8FABD4] hover:text-[#4A70A9] transition-colors"
-                                    >
-                                        <Icon size={18} />
-                                    </a>
-                                )
-                            )}
+                            {socialLinks.map(({ icon: Icon, url }, idx) => (
+                                <a
+                                    key={idx}
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-[#EFECE3]/10 rounded-full hover:bg-[#8FABD4] hover:text-[#4A70A9] transition-colors"
+                                >
+                                    <Icon size={18} />
+                                </a>
+                            ))}
                         </div>
                     </div>
 

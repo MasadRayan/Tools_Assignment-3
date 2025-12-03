@@ -13,7 +13,6 @@ const Register = () => {
     const [profilePic, setProfilePic] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(state);
     const from = location.state?.from || "/";
 
     useEffect(() => {

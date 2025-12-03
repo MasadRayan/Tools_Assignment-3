@@ -77,7 +77,7 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#EFECE3] flex mt-20">
+        <div className="min-h-screen bg-[#EFECE3] flex md:mt-20 mt-12">
             <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/60 z-10" />
 

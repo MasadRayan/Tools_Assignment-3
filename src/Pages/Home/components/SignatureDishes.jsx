@@ -54,7 +54,6 @@ const SignatureDishes = () => {
 
   const [allMeals, setAllMeals] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(allMeals);
 
   useEffect(() => {
     const fetchMeals = async () => {
