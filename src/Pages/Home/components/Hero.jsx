@@ -62,12 +62,12 @@ const Hero = () => {
             <HiArrowRight className="transition-transform group-hover:translate-x-1" />
           </Link>
 
-          <a
-            href="#about"
+          <Link
+            to={'/contact'}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#4A70A9] text-[#4A70A9] font-semibold tracking-wider hover:bg-[#4A70A9] hover:text-white transition-all"
           >
-            Our Story
-          </a>
+            Contact Us
+          </Link>
         </motion.div>
       </div>
     </section>

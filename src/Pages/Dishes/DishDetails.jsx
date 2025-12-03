@@ -17,6 +17,10 @@ const DishDetails = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        document.title = "Dish Details";
+    }, [])
+
+    useEffect(() => {
         const fetchMealDetails = async () => {
             try {
                 const res = await fetch(
