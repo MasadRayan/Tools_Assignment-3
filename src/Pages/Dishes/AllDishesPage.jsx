@@ -4,6 +4,7 @@ import { HiStar } from "react-icons/hi";
 import PageLoader from "../../components/PageLoader";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router";
+import { ScrollRestoration } from "react-router";
 
 
 const AllDishesPage = () => {
@@ -87,6 +88,11 @@ const AllDishesPage = () => {
                                             alt={dish.strMeal || "Dish"}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
+                                        <div className="absolute top-2 left-2  rounded-full p-2">
+                                            <span className="bg-[#EFECE3]/90 backdrop-blur-sm text-[#1A1A1A] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                                {dish.strCategory || "Unknown Category"}
+                                            </span>
+                                        </div>
 
                                     </div>
 
@@ -99,7 +105,7 @@ const AllDishesPage = () => {
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <p className="font-body text-sm text-[#666] line-clamp-2">
-                                                Category: {dish.strCategory || "Unknown Category"}
+                                                Area: {dish.strArea || "Unknown Area"}
                                             </p>
                                             <div className="pr-2">
                                                 <Link to={`/dishes/${dish.idMeal}`} className="text-[#4A70A9] hover:text-[#1A1A1A] transition-colors duration-300">
@@ -120,6 +126,7 @@ const AllDishesPage = () => {
                     )}
                 </div>
             </section>
+            <ScrollRestoration />
         </main>
     );
 };

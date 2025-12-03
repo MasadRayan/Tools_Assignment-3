@@ -7,6 +7,7 @@ import ChefSection from './components/ChefSection';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import { ScrollRestoration } from 'react-router';
 
 const Homepage = () => {
     return (
@@ -19,6 +20,7 @@ const Homepage = () => {
             <Gallery></Gallery>
             <Testimonials></Testimonials>
             <FAQ></FAQ>
+            <ScrollRestoration></ScrollRestoration>
         </div>
     );
 };

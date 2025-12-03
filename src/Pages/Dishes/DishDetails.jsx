@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router";
+import { useParams, Link, ScrollRestoration } from "react-router";
 import { motion } from "framer-motion";
 import {
     FiArrowLeft,
@@ -89,7 +89,6 @@ const DishDetails = () => {
     return (
         <div className="min-h-screen bg-[#F8F8F8]">
 
-            {/* Hero Section */}
             <section className="pt-24 pb-12 px-4">
                 <div className="max-w-7xl mx-auto">
                     <Link
@@ -101,7 +100,6 @@ const DishDetails = () => {
                     </Link>
 
                     <div className="grid lg:grid-cols-2 gap-12">
-                        {/* Image */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -119,7 +117,6 @@ const DishDetails = () => {
                             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#4A70A9]/20 rounded-full blur-3xl -z-10" />
                         </motion.div>
 
-                        {/* Details */}
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -185,7 +182,6 @@ const DishDetails = () => {
                 </div>
             </section>
 
-            {/* Ingredients Section */}
             <section className="py-12 px-4 bg-[#4A70A9]/5">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
@@ -233,7 +229,6 @@ const DishDetails = () => {
                 </div>
             </section>
 
-            {/* Instructions Section */}
             <section className="py-12 px-4">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
@@ -262,7 +257,6 @@ const DishDetails = () => {
                 </div>
             </section>
 
-            {/* YouTube Video Section */}
             {youtubeEmbed && (
                 <section className="py-12 px-4 bg-[#4A70A9]/5">
                     <div className="max-w-4xl mx-auto">
@@ -293,6 +287,7 @@ const DishDetails = () => {
                 </section>
             )}
 
+            <ScrollRestoration></ScrollRestoration>
         </div>
     );
 };
