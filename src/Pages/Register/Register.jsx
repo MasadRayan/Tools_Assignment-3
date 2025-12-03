@@ -11,9 +11,9 @@ const Register = () => {
     const { createUser, signImWithGoogle, updateUser, setUser, signInWithGitHub } = useAuth();
     const [showPass, setShowPass] = useState(false);
     const [profilePic, setProfilePic] = useState('');
-    const location = useLocation();
     const navigate = useNavigate();
-
+    const location = useLocation();
+    console.log(state);
     const from = location.state?.from || "/";
 
     useEffect(() => {
@@ -72,7 +72,6 @@ const Register = () => {
                 formData
             );
 
-            // console.log('Uploaded image URL:', res.data.secure_url);
             setProfilePic(res.data.secure_url);
         } catch (error) {
             console.error("Cloudinary upload failed:", error);
