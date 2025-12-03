@@ -13,7 +13,7 @@ const Footer = () => {
                     <div>
                         <Link to="/" className="inline-block mb-6">
                             <span className="font-display text-3xl font-bold text-[#EFECE3]">
-                                Savoria
+                                KhanaPina
                             </span>
                         </Link>
                         <p className="font-body text-[#EFECE3]/80 mb-6 leading-relaxed">
@@ -103,7 +103,7 @@ const Footer = () => {
                             <li className="flex items-center gap-3">
                                 <HiMail className="text-[#8FABD4] text-xl shrink-0" />
                                 <a
-                                    href="mailto:reservations@savoria.com"
+                                    href="mailto:reservations@KhanaPina.com"
                                     className="hover:text-[#EFECE3] transition-colors"
                                 >
                                     masadrayan2002@gmail.com.com
@@ -119,7 +119,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="font-body text-sm text-[#EFECE3]/60">
-                            © {new Date().getFullYear()} Savoria Restaurant. All rights
+                            © {new Date().getFullYear()} KhanaPina Restaurant. All rights
                             reserved.
                         </p>
                         <div className="flex gap-6">

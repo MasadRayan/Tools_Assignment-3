@@ -14,14 +14,14 @@ const Navbar = () => {
     const location = useLocation();
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#EFECE3]/70 border-b border-[#8FABD4]/40  ">
+        <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#EFECE3]/70 border-b border-[#8FABD4]/40 ">
             <div className="px-4 lg:px-8 container mx-auto">
                 <div className="flex items-center justify-between h-16 lg:h-20">
 
                     {/* LOGO */}
                     <Link to="/" className="flex items-center">
                         <span className="text-3xl font-bold text-[#4A70A9]">
-                            Savoria
+                            KhanaPina
                         </span>
                     </Link>
 
@@ -84,8 +84,8 @@ const Navbar = () => {
                             (
                                 <motion.div
                                     key={link.name}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.08 }}
                                 >
                                     <Link
@@ -101,8 +101,8 @@ const Navbar = () => {
 
                             {/* Mobile CTA */}
                             <motion.div
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: navLinks.length * 0.08 }}
                                 className="mt-5"
                             >

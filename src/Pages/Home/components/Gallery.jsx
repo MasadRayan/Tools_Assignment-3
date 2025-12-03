@@ -60,7 +60,7 @@ const Gallery = () => {
           </h2>
 
           <p className="font-body text-[#6D6D6D] max-w-2xl mx-auto">
-            A glimpse into the Savoria experience — from our elegant ambiance to
+            A glimpse into the KhanaPina experience — from our elegant ambiance to
             our meticulously crafted dishes.
           </p>
         </motion.div>

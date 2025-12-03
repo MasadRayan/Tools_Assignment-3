@@ -9,7 +9,7 @@ const testimonials = [
     role: "Food Critic",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
     quote:
-      "Savoria redefines fine dining. Every dish is a masterpiece, and the attention to detail is extraordinary. An unforgettable culinary journey.",
+      "KhanaPina redefines fine dining. Every dish is a masterpiece, and the attention to detail is extraordinary. An unforgettable culinary journey.",
     rating: 5,
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     role: "Travel Blogger",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
     quote:
-      "Having dined at restaurants around the world, Savoria stands out for its perfect balance of innovation and classic technique.",
+      "Having dined at restaurants around the world, KhanaPina stands out for its perfect balance of innovation and classic technique.",
     rating: 5,
   },
 ];

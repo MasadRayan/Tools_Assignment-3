@@ -49,7 +49,8 @@ const dishes = [
 const SignatureDishes = () => {
   return (
     <section className="py-20 lg:py-32 bg-[#EFECE3]">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,22 +59,22 @@ const SignatureDishes = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#4A70A9] font-body text-sm uppercase tracking-[0.3em]">
+          <span className="text-[#4A70A9] text-sm uppercase tracking-[0.3em]">
             Chef's Selection
           </span>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-[#1A1A1A] mt-4 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1A] mt-4 mb-6">
             Signature Dishes
           </h2>
 
-          <p className="font-body text-[#555] max-w-2xl mx-auto">
+          <p className="text-[#555] max-w-2xl mx-auto">
             Discover our most beloved creations, crafted with passion and
             the finest ingredients.
           </p>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {dishes.map((dish, index) => (
             <motion.div
               key={dish.id}
@@ -84,7 +85,7 @@ const SignatureDishes = () => {
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-[#8FABD4]/20"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden">
                 <img
                   src={dish.image}
                   alt={dish.name}
@@ -109,15 +110,17 @@ const SignatureDishes = () => {
 
               {/* Content */}
               <div className="p-5">
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="font-display text-xl font-semibold text-[#1A1A1A]">
+                <div className="flex justify-between items-start gap-2 mb-2">
+                  <h3 className="text-xl font-semibold flex-1">
                     {dish.name}
                   </h3>
 
-                  <span className="text-[#4A70A9] font-semibold">{dish.price}</span>
+                  <span className="text-[#4A70A9] font-semibold whitespace-nowrap">
+                    {dish.price}
+                  </span>
                 </div>
 
-                <p className="font-body text-sm text-[#666] line-clamp-2">
+                <p className="text-sm text-[#666] line-clamp-2">
                   {dish.description}
                 </p>
               </div>
@@ -135,12 +138,13 @@ const SignatureDishes = () => {
         >
           <Link
             to="/dishes"
-            className="inline-flex items-center gap-2 text-[#4A70A9] font-body text-sm uppercase tracking-wider hover:gap-4 transition-all group"
+            className="inline-flex items-center gap-2 text-[#4A70A9] text-sm uppercase tracking-wider hover:gap-4 transition-all group"
           >
             View Full Menu
             <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
+
       </div>
     </section>
   );

@@ -4,16 +4,16 @@ import { Link } from "react-router";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-svh flex items-center pt-24 overflow-hidden mt-10 md:mt-20">
+
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="./herobg.jpg"
+          src="/herobg.jpg"
           alt="Restaurant ambiance"
-          className="w-full h-full object-"
+          className="w-full h-full object-cover"
         />
-        {/* Elegant Overlay */}
-        <div className="absolute inset-0 bg-black/60 opacity-50 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
       </div>
 
       {/* CONTENT */}
@@ -24,7 +24,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="inline-block text-[#4A70A9] font-semibold tracking-[0.25em] text-sm mb-4"
         >
-          Welcome to Savoria
+          Welcome to KhanaPina
         </motion.span>
 
         <motion.h1
@@ -44,7 +44,7 @@ const Hero = () => {
           className="max-w-xl text-lg text-white/80 leading-relaxed mb-10"
         >
           Discover fine dining crafted with passion, seasonal ingredients, and
-          rich culinary heritage — where every dish is designed to elevate your senses.
+          rich culinary heritage.
         </motion.p>
 
         {/* Buttons */}
@@ -56,7 +56,7 @@ const Hero = () => {
         >
           <Link
             to="/dishes"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4A70A9] text-white font-semibold tracking-wider hover:bg-[#3a5a87] transition-all shadow-lg"
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4A70A9] text-white font-semibold tracking-wider hover:bg-[#3a5a87] transition-all shadow-lg"
           >
             Explore Menu
             <HiArrowRight className="transition-transform group-hover:translate-x-1" />

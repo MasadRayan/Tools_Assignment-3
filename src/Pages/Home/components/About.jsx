@@ -10,7 +10,7 @@ const features = [
 
 const About = () => {
     return (
-        <section id="about" className="py-20 lg:py-5 bg-[#EFECE3]">
+        <section id="about" className="py-20 lg:py-5 bg-[#EFECE3] ">
             <div className="container mx-auto px-4 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -31,8 +31,8 @@ const About = () => {
 
                     {/* Images */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                         className="relative"
@@ -54,14 +54,14 @@ const About = () => {
                         </div>
 
                         {/* Decorative Circles */}
-                        <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#4A70A9]/15 rounded-full -z-10" />
-                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#8FABD4]/20 rounded-full -z-10" />
+                        <div className="hidden lg:absolute -bottom-6 -left-6 w-32 h-32 bg-[#4A70A9]/15 rounded-full -z-10" />
+                        <div className="hidden lg:absolute -top-6 -right-6 w-24 h-24 bg-[#8FABD4]/20 rounded-full -z-10" />
                     </motion.div>
 
                     {/* Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
@@ -73,7 +73,7 @@ const About = () => {
                         </h2>
 
                         <p className="font-body text-[#555] mb-6 leading-relaxed">
-                            Founded in 2010, Savoria has become a beacon of culinary innovation.
+                            Founded in 2010, KhanaPina has become a beacon of culinary innovation.
                             Our passion for exceptional cuisine and warm hospitality has earned
                             us recognition from critics and food lovers alike.
                         </p>
@@ -88,8 +88,8 @@ const About = () => {
                             {features.map((feature, index) => (
                                 <motion.li
                                     key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
                                     className="flex items-center gap-3"

@@ -11,7 +11,7 @@ import { ScrollRestoration } from 'react-router';
 
 const Homepage = () => {
     return (
-        <div>
+        <div className=''>
             <Hero></Hero>
             <Marquee></Marquee>
             <SignatureDishes></SignatureDishes>

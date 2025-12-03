@@ -21,7 +21,7 @@ const PageLoader = () => {
           transition={{ duration: 0.5 }}
           className="font-display text-2xl text-[#1A1A1A] mb-4"
         >
-          Savoria
+          KhanaPina
         </motion.h2>
 
         {/* Bouncing Dots */}

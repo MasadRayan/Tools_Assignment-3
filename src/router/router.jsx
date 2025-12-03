@@ -3,6 +3,7 @@ import RootLayout from "../Layouts/RootLayout";
 import Homepage from "../Pages/Home/Homepage";
 import AllDishesPage from "../Pages/Dishes/AllDishesPage";
 import DishDetails from "../Pages/Dishes/DishDetails";
+import Login from "../Pages/Login/Login";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dishes/:id',
                 Component: DishDetails
+            },
+            {
+                path: '/login',
+                Component: Login,
             }
             
         ]
