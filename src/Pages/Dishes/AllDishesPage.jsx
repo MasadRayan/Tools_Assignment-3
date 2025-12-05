@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { HiStar } from "react-icons/hi";
 import PageLoader from "../../components/PageLoader";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router";
@@ -56,7 +55,6 @@ const AllDishesPage = () => {
 
     return (
         <main className="min-h-screen bg-[#F8F8F8]">
-            {/* HERO */}
             <section className="pt-24 pb-12 lg:pt-32 lg:pb-16 bg-[#EFECE3]">
                 <div className="container mx-auto px-4 lg:px-8 text-center">
                     <span className="inline-block text-[#4A70A9] text-sm uppercase tracking-widest mb-4">
@@ -71,7 +69,6 @@ const AllDishesPage = () => {
                 </div>
             </section>
 
-            {/* MEALS GRID */}
             <section className="py-12 lg:py-20">
                 <div className="container mx-auto px-4 lg:px-8">
                     {loading ? (
@@ -87,7 +84,6 @@ const AllDishesPage = () => {
                                     transition={{ duration: 0.1 }}
                                     className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-[#8FABD4]/20"
                                 >
-                                    {/* Image */}
                                     <div className="relative h-56 overflow-hidden">
                                         <img
                                             src={dish.strMealThumb || "./food/noimage.jpg"}
@@ -102,7 +98,6 @@ const AllDishesPage = () => {
 
                                     </div>
 
-                                    {/* Content */}
                                     <div className="p-5">
                                         <div className="flex items-start justify-between gap-2 mb-2">
                                             <h3 className="font-display text-2xl font-semibold text-[#1A1A1A]">
